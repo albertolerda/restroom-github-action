@@ -10,7 +10,7 @@ jobs:
       - name: Hello world action step
         uses: ./
         with:
-          restroom-contracts: "${{ env.GITHUB_WORKSPACE }}/contracts"
+          restroom-contracts: "${{ github.workspace }}/contracts"
       - name: Install curl
         run: sudo apt install curl
       - name: Try to fetch
