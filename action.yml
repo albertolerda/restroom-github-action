@@ -7,8 +7,13 @@ inputs:
     required: false
     default: 'restroom'
 
+  restroom-contracts:
+    description: "Absolute path to contracts"
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.restroom-container-name }}
+    - ${{ inputs.restroom-contracts }}
+volumes:

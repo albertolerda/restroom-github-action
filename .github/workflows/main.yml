@@ -3,12 +3,14 @@ on: [push]
 jobs:
   restroom_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Start restroom and request a simple contract
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Hello world action step
         uses: ./
+        with:
+          restroom-contracts: "${GITHUB_WORKSPACE}/contracts"
       - name: Install curl
         run: sudo apt install curl
       - name: Try to fetch
